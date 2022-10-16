@@ -1,4 +1,13 @@
+import Buttons from '../components/Buttons';
+
 const Six = () => {
+
+  const content = [
+    "Units like Arrays & Hashmaps",
+    "Recursion",
+    "Big O Notation",
+  ]
+
   return (
     <div className="container mx-auto bg-white rounded-xl h-64 shadow-lg">
       <p className="text-5xl font-extrabold py-4 text-center px-2">
@@ -6,6 +15,9 @@ const Six = () => {
           Algorithm & Datastructures
         </span>
       </p>
+      <div className="flex justify-around flex-wrap">
+        <Buttons content={content} />
+      </div>
     </div>
   );
 }

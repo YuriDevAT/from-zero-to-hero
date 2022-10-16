@@ -1,13 +1,25 @@
-const Buttons = () => {
+// import close from '../assets/close.svg';
+/** TO DO: 
+ * SVG not showing up in the browser
+ */
+
+const Buttons = ({ content }: any) => {
+
   return (
-    <div className="bg-gray-100 rounded-full p-4 max-w-xs flex justify-around m-2">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-      <span>
-        Browser API
-      </span>
-    </div>
+    <>
+      {content.map((item: any) => (
+        <button className="bg-gray-100 rounded-full p-4 max-w-xs flex justify-around m-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+          {/* <img src={close} alt="" className="w-6 h-6" aria-label="Issue not finished." /> */}
+          <span>
+            {item}
+          </span>
+        </button>
+      ))
+      }
+    </>
   )
 }
 

@@ -1,6 +1,17 @@
 import Buttons from '../components/Buttons';
 
 const One = () => {
+
+  const content = [
+    "Web Performance",
+    "Browser API",
+    "Advanced JavaScript",
+    "Software LifeCycle, e.g.",
+    "SL: Deployment",
+    "SL: Monitoring",
+    "SL: Scalability",
+  ]
+
   return (
     <div className="container mx-auto bg-white rounded-xl min-h-64 shadow-lg px-2 py-4">
       <p className="text-5xl font-extrabold pb-4 text-center">
@@ -9,12 +20,7 @@ const One = () => {
         </span>
       </p>
       <div className="flex justify-around flex-wrap">
-        <Buttons />
-        <Buttons />
-        <Buttons />
-        <Buttons />
-        <Buttons />
-        <Buttons />
+        <Buttons content={content} />
       </div>
     </div>
   );
