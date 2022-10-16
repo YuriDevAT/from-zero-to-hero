@@ -1,5 +1,10 @@
+## Decription
 
-<img width="740" alt="Screenshot 2022-10-15 at 11 51 57" src="https://user-images.githubusercontent.com/54622834/195980177-7c61019e-9eb6-42d7-9b73-83306c745fbb.png">
+Welcome to my latest project, a guide who brings you from Junior to Senior developer level by learning the content to each topic provided. The progressbar will be showing the current state of "knowledge", as far as it is measureable. When clicking on an item, it will appear in color and the progressbar increases until it reaches 100%.
+
+The Screenshot of the app is in its current state, not finished though. Functionality still missing. Content could change. The screenshot will be updated when the project is finished.
+
+<img width="1399" alt="Project's homepage showing 6 containers with to do's to learn in each section in order to become a senior developer" src="https://user-images.githubusercontent.com/54622834/196051832-568aa5a4-8d61-47d6-b1a9-40518e7a6a6d.png">
 
 # Getting Started with Create React App
 
