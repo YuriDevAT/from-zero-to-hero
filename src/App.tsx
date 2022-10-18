@@ -2,7 +2,7 @@ import './App.css';
 import ProgressBar from './components/ProgressBar';
 import Five from './container/Five';
 import Four from './container/Four';
-import One from './container/One';
+import TechArea from './container/TechArea';
 import Three from './container/Three';
 import Two from './container/Two';
 import Six from './container/Six';
@@ -17,7 +17,7 @@ function App() {
         <ProgressBar />
       </header>
       <main className="p-10 grid gap-12 grid-cols-2">
-        <One />
+        <TechArea />
         <Two />
         <Three />
         <Four />
