@@ -3,13 +3,13 @@ import Buttons from '../components/Buttons';
 const One = () => {
 
   const content = [
-    "Web Performance",
-    "Browser API",
-    "Advanced JavaScript",
-    "Software LifeCycle, e.g.",
-    "SL: Deployment",
-    "SL: Monitoring",
-    "SL: Scalability",
+    { title: "Web Performance", isCompleted: false, id: 1 },
+    { title: "Browser API", isCompleted: true, id: 2 },
+    { title: "Advanced JavaScript", isCompleted: false, id: 3 },
+    { title: "Software LifeCycle, e.g.", isCompleted: false, id: 4 },
+    { title: "SL: Deployment", isCompleted: false, id: 5 },
+    { title: "SL: Monitoring", isCompleted: false, id: 6 },
+    { title: "SL: Scalability", isCompleted: false, id: 7 },
   ]
 
   return (
