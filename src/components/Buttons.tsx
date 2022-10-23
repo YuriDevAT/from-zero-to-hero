@@ -4,6 +4,13 @@ import { useState } from 'react';
  * SVG not showing up in the browser
  */
 
+// Needed for content props?
+export interface Content {
+  id: number;
+  title: string;
+  isCompleted: boolean;
+}
+
 const Buttons = ({ content }: any) => {
   const [completed, setCompleted] = useState(content);
 
@@ -31,7 +38,7 @@ const Buttons = ({ content }: any) => {
 
   return (
     <>
-      {content.map((item: any) => (
+      {content.map((item: { id: number, isCompleted: boolean, title: string }) => (
         <li key={item.id} style={{ listStyleType: "none" }}>
           <button
             className={`rounded-full p-4 max-w-xs flex justify-around m-2 ${item.isCompleted ? "bg-purple-500" : "bg-gray-100 hover:bg-gray-300"}`}
