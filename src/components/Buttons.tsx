@@ -7,15 +7,27 @@ import { useState } from 'react';
 const Buttons = ({ content }: any) => {
   const [completed, setCompleted] = useState(content);
 
+  const contentID = content.map((item: any) => {
+    return item.id
+  });
+
+
   const handleClick = () => {
-    setCompleted(completed.map((item: any, key: any) => {
-      if (item.id === completed.key) { // What do I have to compare here on the right side? item.id shows value in console.log but the other is always undefined; tried with item.key; completed.id, only id, key.id, completed.ley}
-        return { ...item, isCompleted: !completed.isCompleted }
-      } else {
-        return item;
-      }
-    }))
+    const newState = changeState();
+    setCompleted(newState);
   };
+
+  function changeState() {
+    completed.map((item: any) => {
+      if (item.id === contentID) {
+        return {
+          ...item,
+          isCompleted: !item.isCompleted,
+        };
+      }
+      return item;
+    });
+  }
 
   return (
     <>
