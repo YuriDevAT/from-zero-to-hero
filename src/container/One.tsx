@@ -2,14 +2,15 @@ import Buttons from '../components/Buttons';
 
 const One = () => {
 
-  const content = [
-    { title: "Web Performance", isCompleted: false, id: 1 },
-    { title: "Browser API", isCompleted: true, id: 2 },
-    { title: "Advanced JavaScript", isCompleted: false, id: 3 },
-    { title: "Software LifeCycle, e.g.", isCompleted: false, id: 4 },
-    { title: "SL: Deployment", isCompleted: false, id: 5 },
-    { title: "SL: Monitoring", isCompleted: false, id: 6 },
-    { title: "SL: Scalability", isCompleted: false, id: 7 },
+  // maybe change to Type or Interface
+  const content: { id: number; title: string; isCompleted: boolean }[] = [
+    { id: 1, title: "Web Performance", isCompleted: false },
+    { id: 2, title: "Browser API", isCompleted: true },
+    { id: 3, title: "Advanced JavaScript", isCompleted: false },
+    { id: 4, title: "Software LifeCycle, e.g.", isCompleted: false },
+    { id: 5, title: "SL: Deployment", isCompleted: false },
+    { id: 6, title: "SL: Monitoring", isCompleted: false },
+    { id: 7, title: "SL: Scalability", isCompleted: false },
   ]
 
   return (
