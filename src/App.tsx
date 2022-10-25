@@ -1,11 +1,6 @@
 import './App.css';
 import ProgressBar from './components/ProgressBar';
-import Five from './container/Five';
-import Four from './container/Four';
-import TechArea from './container/TechArea';
-import Three from './container/Three';
-import Two from './container/Two';
-import Six from './container/Six';
+import Container from './container/Container';
 
 function App() {
   return (
@@ -17,15 +12,11 @@ function App() {
         <ProgressBar />
       </header>
       <main className="p-10 grid gap-12 grid-cols-2">
-        <TechArea />
-        <Two />
-        <Three />
-        <Four />
-        <Five />
-        <Six />
+        <Container />
       </main>
     </div>
   );
 }
+
 
 export default App;
