@@ -2,7 +2,12 @@
 
 const Container = () => {
 
-  const headings: { name: string, color: string }[] = [
+  interface IHeadings {
+    name: string;
+    color: string;
+  }
+
+  const headings: IHeadings[] = [
     { name: "UI Engineering", color: "from-pink-500 to-violet-500" },
     { name: "Code Quality", color: "from-green-400 to-cyan-500" },
     { name: "Software Architecture", color: "from-sky-400 to-indigo-500" },
@@ -14,7 +19,7 @@ const Container = () => {
 
   return (
     <>
-      {headings.map((item: { name: string, color: string }) => (
+      {headings.map((item: IHeadings) => (
         <div className="container mx-auto bg-white rounded-xl min-h-64 shadow-lg">
           <p className="text-5xl font-extrabold py-4 text-center px-2">
             <span className={`bg-clip-text text-transparent bg-gradient-to-r ${item.color}`}>
