@@ -1,4 +1,3 @@
-import './App.css';
 import ProgressBar from './components/ProgressBar';
 import Container from './container/Container';
 
