@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { Dispatch, FC, SetStateAction, useState } from 'react';
 import IButtons, { buttons } from '../interfaces/buttons';
 import { ReactComponent as Check } from '../assets/check.svg';
 import { ReactComponent as Close } from '../assets/close.svg';
 
 const Buttons = () => {
 
-  // const [completed, setCompleted] = useState(content);
+  const [completed, setCompleted] = useState({ buttons: buttons });
+  console.log(completed);
 
   // const contentID = content.map((item: any) => {
   //   return item.id
@@ -13,21 +14,22 @@ const Buttons = () => {
 
 
   const handleClick = () => {
-    // const newState = changeState();
-    // setCompleted(newState);
+    const newState = changeState();
+    setCompleted(newState);
   };
 
-  // function changeState() {
-  //   completed.map((item: any) => {
-  //     if (item.id === contentID) {
-  //       return {
-  //         ...item,
-  //         isCompleted: !item.isCompleted,
-  //       };
-  //     }
-  //     return item;
-  //   });
-  // }
+  function changeState() {
+    completed.buttons.map((button: IButtons, key: number) => {
+      if (button.content[key].id === key) {
+        return {
+          ...button,
+          state: !button.content[key].state,
+        };
+      }
+      return button;
+    });
+    return completed;
+  }
 
   return (
     <>
