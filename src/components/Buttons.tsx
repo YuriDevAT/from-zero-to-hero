@@ -1,39 +1,74 @@
 import { useState } from 'react';
-// import close from '../assets/close.svg';
-/** TO DO: 
- * SVG not showing up in the browser
- */
+import IButtons, { buttons } from '../interfaces/buttons';
+import { ReactComponent as Check } from '../assets/check.svg';
+import { ReactComponent as Close } from '../assets/close.svg';
 
-const Buttons = ({ content }: any) => {
-  const [complete, setComplete] = useState(false);
+const Buttons = () => {
+
+  const [completed, setCompleted] = useState({ buttons: buttons });
+
+  // const contentID = content.map((item: any) => {
+  //   return item.id
+  // });
+
+  /**
+  * TO DO
+  * handleClick function not working
+  */
+
 
   const handleClick = () => {
-    setComplete(!complete);
+    const newState = changeState();
+    setCompleted(newState);
   };
+
+  function changeState() {
+    completed.buttons.map((button: IButtons, key: number) => {
+      if (button.content[key].id === key) {
+        return {
+          ...button,
+          state: !button.content[key].state,
+        };
+      }
+      return button;
+    });
+    return completed;
+  }
+
+  /**
+  * To Do
+  * Only show buttons from buttons array whose title matches the heading
+  */
 
   return (
     <>
-      {content.map((item: any) => (
-        <button
-          className={`rounded-full p-4 max-w-xs flex justify-around m-2 ${complete ? "bg-purple-500" : "bg-gray-100"}`}
-          type="button"
-          onClick={handleClick}
-        >
-          {complete ? (
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          )}
-          {/* <img src={close} alt="" className="w-6 h-6" aria-label="Issue not finished." /> */}
-          <span>
-            {item}
-          </span>
-        </button>
-      ))
+      {buttons.map((button: IButtons) => (
+        button.content.map((item: { id: number, name: string, state: boolean }) => (
+          <li key={item.id} style={{ listStyleType: "none" }}>
+            <button
+              className={`rounded-full p-4 max-w-xs flex justify-around m-2 ${item.state ? "bg-purple-500" : "bg-gray-100 hover:bg-gray-300"}`}
+              type="button"
+              onClick={handleClick}
+            >
+              {item.state ? (
+                /**
+                 * To Do
+                 * Check if implementing SVG here is the best way to do this
+                 */
+                <div className="w-6 h-6">
+                  <Check />
+                </div>
+              ) : (
+                <div className="w-6 h-6">
+                  <Close />
+                </div>
+              )}
+              <span>
+                {item.name}
+              </span>
+            </button>
+          </li>
+        ))))
       }
     </>
   )
