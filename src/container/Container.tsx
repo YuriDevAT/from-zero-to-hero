@@ -1,7 +1,13 @@
 import Buttons from "../components/Buttons";
+import IButtons, { buttons } from "../interfaces/buttons";
 import { headings } from "../interfaces/headings";
 
 const Container = () => {
+
+  /**
+   * To Do 
+   * Only show buttons from buttons array whose title matches the heading
+   */
 
   return (
     <>
@@ -13,7 +19,10 @@ const Container = () => {
             </span>
           </p>
           <div className="flex justify-around flex-wrap">
-            <Buttons />
+            {buttons.map((button: IButtons) => (
+              button.title === item.name && <Buttons />
+            ))}
+            {/* <Buttons /> */}
           </div>
         </div>
       ))}

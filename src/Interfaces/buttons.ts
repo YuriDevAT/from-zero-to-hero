@@ -11,7 +11,7 @@ export interface IButtonsContent {
 
 export const buttons: IButtons[] = [
   {
-    title: 'uiEngineering',
+    title: 'UI Engineering',
     content: [
       {
         id: 1,
@@ -46,6 +46,16 @@ export const buttons: IButtons[] = [
       {
         id: 7,
         name: 'SL: Scalability',
+        state: false,
+      }
+    ]
+  },
+  {
+    title: 'Code Quality',
+    content: [
+      {
+        id: 11,
+        name: 'Testing',
         state: false,
       }
     ]

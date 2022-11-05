@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import IButtons, { buttons } from '../interfaces/buttons';
 import { ReactComponent as Check } from '../assets/check.svg';
 import { ReactComponent as Close } from '../assets/close.svg';
@@ -6,11 +6,15 @@ import { ReactComponent as Close } from '../assets/close.svg';
 const Buttons = () => {
 
   const [completed, setCompleted] = useState({ buttons: buttons });
-  console.log(completed);
 
   // const contentID = content.map((item: any) => {
   //   return item.id
   // });
+
+  /**
+  * TO DO
+  * handleClick function not working
+  */
 
 
   const handleClick = () => {
@@ -31,6 +35,11 @@ const Buttons = () => {
     return completed;
   }
 
+  /**
+  * To Do
+  * Only show buttons from buttons array whose title matches the heading
+  */
+
   return (
     <>
       {buttons.map((button: IButtons) => (
@@ -42,9 +51,17 @@ const Buttons = () => {
               onClick={handleClick}
             >
               {item.state ? (
-                <Check />
+                /**
+                 * To Do
+                 * Check if implementing SVG here is the best way to do this
+                 */
+                <div className="w-6 h-6">
+                  <Check />
+                </div>
               ) : (
-                <Close />
+                <div className="w-6 h-6">
+                  <Close />
+                </div>
               )}
               <span>
                 {item.name}
